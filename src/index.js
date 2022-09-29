@@ -44,6 +44,18 @@ function NavBar() {
       activeStyle={{background:"darkblue"}}>
         Login
       </NavLink>
+      <NavLink
+      to = "/signup"
+      style={linkStyles}
+      activeStyle={{background:"darkblue"}}>
+        Signup
+      </NavLink>
+      <NavLink
+      to = "/messages"
+      style={linkStyles}
+      activeStyle={{background:"darkblue"}}>
+        Messages
+      </NavLink>
     </div>
   );
 }
@@ -81,6 +93,50 @@ function Login() {
   );
 }
 
+//more practice
+function Signup() {
+  return (
+    <div>
+      <h1>Signup</h1>
+      <form>
+        <div>
+          <input type="text" name="new username" placeholder="New username" />
+        </div>
+        <div>
+          <input type="text" name="email address" placeholder="Email address" />
+        </div>
+        <div>
+          <input type="password" name="new password" placeholder="New password" />
+        </div>
+        <div>
+          <input type="password" name="confirm password" placeholder="Confirm password" />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  );
+}
+
+function Messages(){
+  return(
+    <div>
+      <h1>Messages</h1>
+      <form>
+      <div>
+        <input type="text" name="send to" placeholder="Send to"/>
+        </div>
+        <div>
+        <input type="text" name="text" placeholder="Text"/>
+        </div>
+        <div>
+        <input type="submit" value="Send"/>
+        </div>
+      </form>
+    </div>
+  )
+}
+//
+
 // Step 2. Change so router is coordinating what is displayed
 ReactDOM.render(
   <BrowserRouter>
@@ -89,6 +145,8 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/messages" element={<Messages />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
